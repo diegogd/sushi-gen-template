@@ -1,0 +1,75 @@
+//- Define the language, based on the page URL
+//- TODO update this as needed
+html(
+	lang="#{ current.path[3] }"
+)
+	head
+		//- Set the page title to the most proximate title variable
+		title #{ title }
+
+		//- Include JQuery
+		script(
+			src="/lib/jquery/jquery.min.js"
+		)
+
+		//- Include Bootstrap
+
+		//- Set the base viewport size
+		meta(
+			name="viewport",
+			content="width=device-width, initial-scale=1"
+		)
+
+		//- Include Bootstrap 
+		//- Include compiled and minified Bootstrap JS
+		//- Bootstrap CSS is automatically embedded into our CSS
+		script(
+			src="/lib/bootstrap/bootstrap.min.js"
+		)
+
+		//- Include Highlight.js JS for code highlighting
+		script(
+			src="/lib/highlight/highlight.pack.min.js"
+		)
+		
+		script(
+			src="http://localhost:35729/livereload.js"
+		)
+
+		//- Include some fonts we need
+
+		//- Lato
+		link(
+			rel="stylesheet",
+			href="/lib/lato/css/lato.min.css",
+			type="text/css"
+		)
+
+		//- League Gothic
+		link(
+		rel="stylesheet",
+		href="/lib/league-gothic/stylesheet.css",
+		type="text/css"
+		)
+
+
+		//- Include our specific styles
+		link(
+			rel="stylesheet",
+			href="/css/style.css",
+			media="all"
+		)
+
+		//- Include subject specific styles
+		link(
+			rel="stylesheet",
+			href="/css/subject_style/#{ language }.css",
+			media="all"
+		)
+
+		//- Include Highlight.js CSS for code styling, and to overwrite our CSS
+		link(
+			rel="stylesheet"
+			href="/lib/highlight/styles/xcode.css",
+			media="all"
+		)
